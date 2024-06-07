@@ -12,8 +12,8 @@ public class Contador {
             numeroUm = terminal.nextInt();
         } catch (InputMismatchException e) {
             System.err.println("Entrada inválida para o primeiro número. Digite um número inteiro.");
-            terminal.next(); // Limpa o buffer do scanner
-            return; // Encerra a execução do programa
+            terminal.next(); 
+            return; 
         }
 
         System.out.println("Digite o segundo número:");
@@ -21,8 +21,8 @@ public class Contador {
             numeroDois = terminal.nextInt();
         } catch (InputMismatchException e) {
             System.err.println("Entrada inválida para o segundo número. Digite um número inteiro.");
-            terminal.next(); // Limpa o buffer do scanner
-            return; // Encerra a execução do programa
+            terminal.next(); 
+            return; 
         }
 
         try {
@@ -30,7 +30,7 @@ public class Contador {
         } catch (NumeroInvalidosException e) {
             System.err.println(e.getMessage());
         } finally {
-            terminal.close(); // Fecha o scanner, mesmo em caso de erro
+            terminal.close(); 
         }
     }
 
