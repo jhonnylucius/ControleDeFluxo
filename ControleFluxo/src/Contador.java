@@ -12,16 +12,16 @@ public class Contador {
             parametroUm = terminal.nextInt();
         } catch (InputMismatchException e) {
             System.err.println("Entrada inválida para o primeiro parâmetro. Digite um número inteiro.");
-            terminal.next(); // Limpa o buffer do scanner
-            return; // Sai do programa
+            terminal.next(); 
+            return; 
         }
         System.out.println("Digite o segundo parâmetro:");
         try {
             parametroDois = terminal.nextInt();
         } catch (InputMismatchException e) {
             System.err.println("Entrada inválida para o segundo parâmetro. Digite um número inteiro.");
-            terminal.next(); // Limpa o buffer do scanner
-            return; // Sai do programa
+            terminal.next(); 
+            return; 
         }
 
         try {
