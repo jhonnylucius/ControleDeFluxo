@@ -5,44 +5,42 @@ public class Contador {
 
     public static void main(String[] args) {
         Scanner terminal = new Scanner(System.in);
-        System.out.println("Digite o primeiro parâmetro:");
-        int parametroUm = 0;
-        int parametroDois = 0;
+        System.out.println("Digite o primeiro número:");
+        int numeroUm = 0;
+        int numeroDois = 0;
         try {
-            parametroUm = terminal.nextInt();
+            numeroUm = terminal.nextInt();
         } catch (InputMismatchException e) {
-            System.err.println("Entrada inválida para o primeiro parâmetro. Digite um número inteiro.");
-            terminal.next(); 
-            return; 
+            System.err.println("Entrada inválida para o primeiro número. Digite um número inteiro.");
+            terminal.next(); // Limpa o buffer do scanner
+            return; // Encerra a execução do programa
         }
-        System.out.println("Digite o segundo parâmetro:");
+
+        System.out.println("Digite o segundo número:");
         try {
-            parametroDois = terminal.nextInt();
+            numeroDois = terminal.nextInt();
         } catch (InputMismatchException e) {
-            System.err.println("Entrada inválida para o segundo parâmetro. Digite um número inteiro.");
-            terminal.next(); 
-            return; 
+            System.err.println("Entrada inválida para o segundo número. Digite um número inteiro.");
+            terminal.next(); // Limpa o buffer do scanner
+            return; // Encerra a execução do programa
         }
 
         try {
-            contar(parametroUm, parametroDois);
-        } catch (ParametrosInvalidosException e) {
+            contar(numeroUm, numeroDois);
+        } catch (NumeroInvalidosException e) {
             System.err.println(e.getMessage());
+        } finally {
+            terminal.close(); // Fecha o scanner, mesmo em caso de erro
         }
-        terminal.close();
     }
 
-    static void contar(int parametroUm, int parametroDois) throws ParametrosInvalidosException {
-        if (parametroUm >= parametroDois) {
-            throw new ParametrosInvalidosException("O segundo parâmetro deve ser maior que o primeiro.");
+    static void contar(int numeroUm, int numeroDois) throws NumeroInvalidosException {
+        if (numeroUm >= numeroDois) {
+            throw new NumeroInvalidosException("O segundo número deve ser maior que o primeiro.");
         }
 
-        for (int i = parametroUm + 1; i < parametroDois; i++) {
+        for (int i = numeroUm + 1; i < numeroDois; i++) {
             System.out.println("Imprimindo o número " + i);
         }
-    }
-}
-
-
     }
 }
